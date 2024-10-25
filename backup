@@ -78,10 +78,10 @@ fi
 
 # Mengirim file backup ke bot Telegram
 curl -s -F chat_id="$CHAT_ID" \
-     -F caption=$'◈ successfully backup your database !\nplease save this information\n◈ Client : <code>'"$CLIENT_NAME</code>"$'\nIP VPS : <code>'"$IP_ADDRESS</code>"$'\n◈ Version   : 1.1 Beta\n◈ Built By  : @SaputraTech\nDomain : <code>'"$DOMAIN</code>"$'\nBackup Date : <code>'"$BACKUP_DATE</code>"$'\n=================================\nCara Restore ?\n replace file db.sqlite3\n=================================' \
+     -F caption=$'=================================\n『 successfully backup your database 』\n=================================\n◈ Client  : <code>'"$CLIENT_NAME</code>"$'\n◈ IP VPS  : <code>'"$IP_ADDRESS</code>"$'\n◈ Version  : 2.1 Stable\n◈ Built By  : @SaputraTech\n=================================\n➣ Cara Restore ?\n➣ Use SFTP\n➣ Replace file db.sqlite3\n=================================' \
      -F parse_mode="HTML" \
      -F document=@"${backup_dir}${backup_file}" \
      https://api.telegram.org/bot$BOT_API/sendDocument > /dev/null 2>&1
 
 # Menampilkan pesan bahwa backup telah berhasil dengan warna hijau
-echo -e "\033[0;32mBackup Data sukses! Cek di botmu su\033[0m"
+echo -e "\033[0;32mMengrim File Backup Data Ke BOT Telegram Kamu Berhasil 💙\033[0m"
