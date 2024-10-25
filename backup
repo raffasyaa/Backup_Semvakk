@@ -78,7 +78,7 @@ fi
 
 # Mengirim file backup ke bot Telegram
 curl -s -F chat_id="$CHAT_ID" \
-     -F caption=$'successfully backup your database !\nplease save this information\n=================================\nIP Address : <code>'"$IP_ADDRESS</code>"$'\nClient Name : <code>'"$CLIENT_NAME</code>"$'\nBackup Date : <code>'"$BACKUP_DATE</code>"$'\nDomain : <code>'"$DOMAIN</code>"$'\n=================================\n=================================\nCara Restore ?\n1. Forward File Ini Ke Bot Direct Link/Mirror Link @edydirect_bot\n2. Copy hasil link ke menu restore di script\n\nNote: Mohon Dibaca\n- Jangan Lupa Mengaktifkan Auto backup Bot Telegram Agar Data Selalu Terupdate\n- Data otomatis hilang 2x24 jam jika tidak segera di restore\n- Password Dashboard Panel Akan Mengikuti Dari Data Yang Di Restore\n=================================' \
+     -F caption=$'◈ successfully backup your database !\nplease save this information\n◈ Client : <code>'"$CLIENT_NAME</code>"$'\nIP VPS : <code>'"$IP_ADDRESS</code>"$'\n◈ Version   : 1.1 Beta\n◈ Built By  : @SaputraTech\nDomain : <code>'"$DOMAIN</code>"$'\nBackup Date : <code>'"$BACKUP_DATE</code>"$'\n=================================\nCara Restore ?\n replace file db.sqlite3\n=================================' \
      -F parse_mode="HTML" \
      -F document=@"${backup_dir}${backup_file}" \
      https://api.telegram.org/bot$BOT_API/sendDocument > /dev/null 2>&1
