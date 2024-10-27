@@ -84,7 +84,7 @@ fi
 
 # Mengirim file backup ke bot Telegram
 response=$(curl -s -F chat_id="$CHAT_ID" \
-     -F caption=$'=================================\n『 successfully backup your database 』\n=================================\n◈ Client  : <code>'"$CLIENT_NAME</code>"$'\n◈ IP VPS  : <code>'"$IP_ADDRESS</code>"$'\n◈ Version  : 2.1 Stable\n◈ Built By  : @SaputraTech\n=================================\n➣ Cara Restore ?\n➣ Use SFTP\n➣ Replace file db.sqlite3\n=================================' \
+     -F caption=$'=================================\n『 successfully backup your database 』\n=================================\n◈ Client  : <code>'"$CLIENT_NAME</code>"$'\n◈ IP VPS  : <code>'"$IP_ADDRESS</code>"$'\n◈ Version  : 2.1 Stable\n◈ Built By  : @SaputraTech\n=================================\n➣ How To Restore ?\n➣ Use SFTP\n➣ Replace file db.sqlite3\n=================================' \
      -F parse_mode="HTML" \
      -F document=@"${backup_dir}${backup_file}" \
      https://api.telegram.org/bot$BOT_API/sendDocument)
